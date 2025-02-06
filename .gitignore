@@ -1,10 +1,13 @@
-
-
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
 
 # C extensions
 *.so
@@ -57,12 +60,6 @@ cover/
 # Translations
 *.mo
 *.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
 
 # Flask stuff:
 instance/
@@ -174,4 +171,8 @@ cython_debug/
 .pypirc
 =======
 db.sqlite3 
+<<<<<<< HEAD
 >>>>>>> ff64123 (Your commit message)
+=======
+"db.sqlite3" 
+>>>>>>> 97d54b1 (Stop tracking db.sqlite3)
