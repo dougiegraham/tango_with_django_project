@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Rango - Add Page</title>
+  </head>
+
+  <body>
+    <h1>Add a Page to {{ category.name }}</h1>
+    <div>
+      <form id="page_form" method="post" action="{% url 'rango:add_page' category.slug %}">
+        {% csrf_token %}
+
+        <!-- Render hidden fields -->
+        {% for hidden in form.hidden_fields %}
+          {{ hidden }}
+        {% endfor %}
+
+        <!-- Render visible fields -->
+        {% for field in form.visible_fields %}
+          <div>
+            {{ field.errors }}
+            {{ field.help_text }}
+            {{ field }}
+          </div>
+        {% endfor %}
+
+        <!-- Submit button -->
+        <input type="submit" name="submit" value="Add Page" />
+      </form>
+    </div>
+
+    <a href="{% url 'rango:show_category' category.slug %}">Back to {{ category.name }}</a>
+  </body>
+</html>
